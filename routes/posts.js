@@ -12,7 +12,7 @@ const router = express.Router();
 /*Read*/
 
 router.get('/', getFeedPosts);
-router.get('/:userId/posts', verifyToken, getUserPosts);
+router.get('/:userId', verifyToken, getUserPosts);
 
 /*Update*/
 

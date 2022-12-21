@@ -28,7 +28,8 @@ export const createPost = async (req, res) => {
 
         await newPost.save();
 
-        const post = await Post.find();
+        const post = await Post.find({});
+        console.log(post);
 
         res.status(201).json(post);
 
@@ -43,7 +44,7 @@ export const createPost = async (req, res) => {
 
 export const getFeedPosts = async (req, res) => {
     try {
-        const post = await Post.find();
+        const post = await Post.find({});
         res.status(200).json(post);
 
     } catch (err) {
